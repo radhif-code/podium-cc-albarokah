@@ -1,0 +1,10 @@
+{
+  "include": ["src/App.tsx", "src/main.tsx", "src/components/scoreboard/**/*.tsx", "src/hooks/use-scoreboard.ts", "src/hooks/use-countdown.ts", "src/lib/scoreboard.ts", "src/lib/shared-state.ts", "src/lib/logo-upload.ts", "src/test/**/*.ts", "src/test/**/*.tsx", "vite.config.ts", "vitest.config.ts"],
+  "compilerOptions": {
+    "target": "ES2022", "jsx": "react-jsx", "module": "ESNext", "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": ["vite/client", "vitest/globals"], "moduleResolution": "Bundler", "allowImportingTsExtensions": true,
+    "noEmit": true, "skipLibCheck": true, "strict": true, "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true, "exactOptionalPropertyTypes": true,
+    "paths": { "@/*": ["./src/*"] }
+  }
+}
