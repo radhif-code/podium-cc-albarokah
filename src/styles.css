@@ -630,7 +630,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, .logo-upload-button:
 .podium-view .podium-lineup {
   width: 100%;
   height: 471px;
-  padding: 0 15px 23px;
+  padding: 0 15px 42px;
   gap: 32px;
   display: flex;
   justify-content: center;
@@ -639,8 +639,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, .logo-upload-button:
 }
 .podium-view .podium-position,
 .podium-view .podium-position.place-1 {
-  width: 325px;
-  flex: 0 0 325px;
+  width: 360px;
+  flex: 0 0 360px;
   z-index: 1;
   margin: 0;
   position: relative;
@@ -652,17 +652,17 @@ button:focus-visible, a:focus-visible, input:focus-visible, .logo-upload-button:
   z-index: 3;
 }
 .podium-view .podium-card {
-  height: 350px;
+  height: 378px;
   border: 4px solid #b7b5c0;
-  border-radius: 37px 37px 21px 21px;
-  background: #f6f4f8;
+  border-radius: 61px 61px 47px 47px;
+  background: #e1dfe4;
   display: flex;
   flex-direction: column;
   position: relative;
   box-shadow: 0 16px 35px #18102f40, 0 1px 3px #fff8 inset;
 }
 .podium-view .place-1 .podium-card {
-  height: 423px;
+  height: 405px;
   border-color: #e6b747;
   box-shadow: 0 18px 40px #1e153c57, 0 0 0 2px #f9da7b88;
 }
@@ -678,7 +678,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, .logo-upload-button:
   justify-content: center;
   background: linear-gradient(120deg,#f1f1f3,#dedde1 51%,#fff);
   color: #201039;
-  border-radius: 31px 31px 0 0;
+  border-radius: 56px 56px 0 0;
   position: relative;
   z-index: 1;
 }
@@ -686,7 +686,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, .logo-upload-button:
   height: 88px;
   min-height: 88px;
   background: linear-gradient(115deg,#ffeab1,#f9cf69 54%,#fff2c5);
-  border-radius: 31px 31px 0 0;
+  border-radius: 56px 56px 0 0;
 }
 .podium-view .place-3 .podium-card-heading {
   background: linear-gradient(115deg,#f9ddcc,#eebc9e 53%,#ffebde);
@@ -695,7 +695,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, .logo-upload-button:
   max-width: 100%;
   margin: 0 0 5px;
   font-family: Arial, 'Poppins', system-ui, sans-serif;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 850;
   line-height: 1.05;
   overflow: hidden;
@@ -714,15 +714,13 @@ button:focus-visible, a:focus-visible, input:focus-visible, .logo-upload-button:
 .podium-view .place-1 .podium-card-heading span { font-size: 13px; letter-spacing: 3.5px; }
 .podium-view .winner-crown {
   position: absolute;
-  top: -78px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #f6c54f;
-  filter: drop-shadow(0 4px 4px #5f372d65);
+  top: -79px;
+  right: -30px;
+  width: 124px;
   z-index: 5;
-  line-height: 0;
+  pointer-events: none;
 }
-.podium-view .winner-crown svg { stroke: #dc9c2d; }
+.podium-view .winner-crown img { display: block; width: 100%; }
 .podium-view .podium-photo {
   flex: 1;
   min-height: 0;
@@ -730,6 +728,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, .logo-upload-button:
   display: block;
   position: relative;
   overflow: hidden;
+  border-radius: 24px 24px 0 0;
   background: linear-gradient(145deg,#b2b3c0 0%,#756d90 60%,#423350 100%);
 }
 .podium-view .place-1 .podium-photo { background: linear-gradient(135deg,#e8c986,#9b809c 63%,#5c3b60); }
@@ -773,14 +772,14 @@ button:focus-visible, a:focus-visible, input:focus-visible, .logo-upload-button:
   align-items: center;
   justify-content: center;
   font-variant-numeric: tabular-nums;
-  font-size: 68px;
+  font-size: 73px;
   font-weight: 900;
   line-height: .94;
   letter-spacing: -1px;
   color: #fff;
   text-shadow: 0 3px 7px #160f2857;
 }
-.podium-view .place-1 .podium-score { font-size: 86px; bottom: 22px; }
+.podium-view .place-1 .podium-score { font-size: 77px; bottom: 22px; }
 .podium-view .podium-score.small-number { font-size: 48px; }
 .podium-view .place-1 .podium-score.small-number { font-size: 61px; }
 .podium-view .podium-score .points-label {
@@ -796,7 +795,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, .logo-upload-button:
   height: 65px;
   min-height: 65px;
   flex-shrink: 0;
-  border-radius: 0 0 16px 16px;
+  border-radius: 27px 27px 42px 42px;
   background: linear-gradient(120deg,#e5e4e8,#c8c8d0 52%,#f8f8fa);
   position: relative;
   display: grid;
@@ -804,38 +803,15 @@ button:focus-visible, a:focus-visible, input:focus-visible, .logo-upload-button:
 }
 .podium-view .place-1 .podium-medal-bar { background: linear-gradient(110deg,#ffedbe,#f6cc67 54%,#fff0bf); }
 .podium-view .place-3 .podium-medal-bar { background: linear-gradient(110deg,#f5d0bb,#dca47f 54%,#ffe2cf); }
-.podium-view .podium-medal {
+.podium-view .podium-medal-art {
   position: absolute;
-  top: -19px;
+  top: -17px;
   left: 50%;
+  width: 137px;
+  height: auto;
   transform: translateX(-50%);
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  background: linear-gradient(140deg,#fcfcff,#aeb1bc 55%,#f7f8fc);
-  border: 3px solid #e6e7e9;
-  outline: 2px solid #a5a6ae;
-  box-shadow: 0 5px 12px #1c12354a;
-  display: grid;
-  place-items: center;
-  color: #4c4b54;
+  pointer-events: none;
 }
-.podium-view .place-1 .podium-medal { width: 99px; height: 99px; background: linear-gradient(135deg,#ffe9a0,#e9ad30 58%,#fff3c9); border-color: #fff0c2; outline-color: #c28a1f; color: #7e500d; }
-.podium-view .place-3 .podium-medal { background: linear-gradient(135deg,#ffe0c4,#c57f5a 58%,#ffdfc5); border-color: #f9d4b9; outline-color: #a76b4a; color: #794b2d; }
-.podium-view .podium-medal svg { position: absolute; opacity: .3; }
-.podium-view .podium-medal strong { position: relative; font-size: 44px; font-weight: 900; line-height: 1; }
-.podium-view .laurel-left, .podium-view .laurel-right {
-  position: absolute;
-  top: 22px;
-  font-size: 34px;
-  line-height: .7;
-  color: #a4a6b0;
-  opacity: .8;
-}
-.podium-view .laurel-left { left: calc(50% - 87px); transform: rotate(-30deg); }
-.podium-view .laurel-right { right: calc(50% - 87px); transform: scaleX(-1) rotate(-30deg); }
-.podium-view .place-1 .laurel-left,.podium-view .place-1 .laurel-right { color: #b77b20; }
-.podium-view .place-3 .laurel-left,.podium-view .place-3 .laurel-right { color: #a16b51; }
 .podium-view .podium-lineup.two-teams { gap: 36px; }
 .podium-view .other-teams {
   margin: 4px auto 0;
@@ -882,13 +858,14 @@ button:focus-visible, a:focus-visible, input:focus-visible, .logo-upload-button:
 .podium-view.has-extra-teams .final-ribbon { height: 48px; }
 .podium-view.has-extra-teams .final-ribbon > span { font-size: 32px; }
 .podium-view.has-extra-teams .event-location { font-size: 25px; margin-top: 10px; }
-.podium-view.has-extra-teams .podium-lineup { height: 388px; padding-bottom: 17px; }
+.podium-view.has-extra-teams .podium-lineup { height: 388px; padding-bottom: 31px; }
 .podium-view.has-extra-teams .podium-card { height: 307px; }
 .podium-view.has-extra-teams .place-1 .podium-card { height: 362px; }
 .podium-view.has-extra-teams .podium-card-heading { min-height: 66px; height: 66px; }
 .podium-view.has-extra-teams .place-1 .podium-card-heading { min-height: 76px; height: 76px; }
 .podium-view.has-extra-teams .podium-medal-bar { min-height: 52px; height: 52px; }
-.podium-view.has-extra-teams .winner-crown { top: -75px; }
+.podium-view.has-extra-teams .podium-medal-art { width: 111px; }
+.podium-view.has-extra-teams .winner-crown { width: 100px; top: -63px; }
 .podium-view.has-extra-teams .other-teams { margin-top: 5px; }
 .podium-view.has-extra-teams .stage-footer { height: 20px; margin-top: auto; }
 @media (prefers-reduced-motion: reduce) {
@@ -896,12 +873,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, .logo-upload-button:
 }
 
 /* Final polish: keep the crown between the subtitle and the team name. */
-.podium-view .winner-crown { top: -28px; }
-.podium-view .winner-crown svg { width: 56px; height: 56px; }
-.podium-view.has-extra-teams .winner-crown { top: -28px; }
 .podium-view .final-ribbon > span,
 .podium-view .podium-card-heading span,
-.podium-view .podium-medal strong,
 .podium-view .stage-footer { font-family: Arial, 'Poppins', system-ui, sans-serif; }
 .podium-view .podium-photo-placeholder { justify-content: flex-start; padding-top: 20px; gap: 2px; }
 .podium-view .podium-photo-placeholder svg { width: 66px; height: 66px; }

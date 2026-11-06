@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, type CSSProperties } from "react";
 import { motion } from "framer-motion";
-import { Award, BookOpen, Crown } from "lucide-react";
+import { BookOpen } from "lucide-react";
 import confetti from "canvas-confetti";
 import { DeltaLayer, ScoreNumber } from "./ScoreDisplay";
 import Avatar from "./Avatar";
@@ -24,7 +24,7 @@ function WinnerCard({team, place, deltas}: {team: Team; place: number; deltas: F
     aria-label={`${team.name}, ${rankName.toLowerCase()}, ${team.score} poin`}
   >
     <div className="podium-card">
-      {place === 1 && <span className="winner-crown" aria-hidden="true"><Crown size={88} strokeWidth={1.5} fill="currentColor" /></span>}
+      {place === 1 && <span className="winner-crown" aria-hidden="true"><img src="/podium/crown.png" alt="" /></span>}
       <div className="podium-card-heading">
         <h3 title={team.name}>{team.name || "Tanpa nama"}</h3>
         <span>{rankName}</span>
@@ -44,8 +44,7 @@ function WinnerCard({team, place, deltas}: {team: Team; place: number; deltas: F
         </div>
       </div>
       <div className="podium-medal-bar" aria-hidden="true">
-        <span className="laurel-left">❧</span><span className="laurel-right">❧</span>
-        <div className="podium-medal"><Award size={65} strokeWidth={1.3}/><strong>{place}</strong></div>
+        <img className="podium-medal-art" src={`/podium/medal-${place}.png`} alt="" />
       </div>
     </div>
   </motion.article>;
