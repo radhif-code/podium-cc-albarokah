@@ -70,7 +70,7 @@ export const DEFAULT_SETTINGS: Settings = {
     { id: "ppg", label: "PPG", src: "/logos/logo-ppg.png" },
   ],
   competitionName: "CERDAS CERMAT",
-  location: "DESA SRUNI",
+  location: "SRUNI AL BAROKAH",
   badgeText: "GEMA ANAK SHOLIH SHOLIHAH",
   themeColor: "#ff7a3d",
   background: "peach",

@@ -485,3 +485,432 @@ button:focus-visible, a:focus-visible, input:focus-visible, .logo-upload-button:
 @media (max-width: 760px) { .operator-nav {height: 72px; padding: 0 18px;} .operator-nav .secondary-button span {display: none;} .brand {font-size: 15px; gap: 7px;} .brand small {font-size: 6px;} .brand-symbol {width: 32px; height: 32px;} .nav-actions {gap: 6px;} .nav-actions .primary-button {font-size: 10px; padding: 10px;} .nav-actions .primary-button svg:last-child {display: none;} .operator-layout {grid-template-columns: 1fr;} .operator-sidebar {grid-row: 1; padding-top: 0;} .operator-sidebar .history-panel, .operator-sidebar .backup-panel, .operator-sidebar .reset-scores {grid-row: auto;} .operator-content {padding: 27px 18px 0;} .operator-title h1 {font-size: 31px;} .operator-title p {font-size: 11px; max-width: 250px;} .sync-badge {font-size: 8px; padding: 7px 9px;} .operator-title {align-items: flex-start;} .setup-hint {font-size: 10px; margin: 22px 0;} .setup-hint > svg {display: none;} .operator-cards {grid-template-columns: repeat(2,minmax(0,1fr));} .timer-control-face {margin: 18px 0;} .operator-sidebar .history-panel {display: none;} .backup-panel {flex-direction: row; align-items: center; justify-content: space-between;} .operator-footer {margin-top: 25px;} .timer-control {padding: 19px;} }
 @media (max-width: 470px) { .operator-cards {grid-template-columns: 1fr;} .sync-badge {display: none;} .operator-nav .secondary-button {padding: 10px;} .countdown-panel {width: 290px; padding: 25px;} .countdown-ring {width: 205px; height: 205px;} .countdown-ring strong {font-size: 110px;} .display-toolbar {font-size: 10px; top: 10px; right: 10px;} .display-toolbar button > span {display: none;} }
 @media (prefers-reduced-motion: reduce) { .blob, .crown-float, .soft-pulse {animation: none !important;} *, *::before, *::after {scroll-behavior: auto !important;} }
+
+/* ============================================================
+   GEMASS GRAND FINAL | live podium only, November 2026
+   The operator workspace deliberately keeps its previous skin.
+   ============================================================ */
+.podium-view {
+  background: #1a1648;
+  color: #fff9ec;
+}
+.podium-view .cosmic-scene {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: #211949 url('/cosmic-sky.webp') center center / cover no-repeat;
+}
+.podium-view .stage-canvas {
+  width: 1600px;
+  height: 900px;
+  padding: 8px 70px 18px;
+  color: #fff8ea;
+}
+.podium-view .event-header {
+  height: 354px;
+  flex: 0 0 354px;
+  justify-content: flex-start;
+  gap: 0;
+  padding: 4px 0 0;
+  z-index: 2;
+}
+.podium-view .institution-logo-bar {
+  width: 278px;
+  height: 76px;
+  padding: 8px 17px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  background: #fffdf8;
+  border: 1px solid #eee8e2;
+  clip-path: polygon(6% 0,94% 0,100% 23%,100% 77%,94% 100%,6% 100%,0 77%,0 23%);
+  flex-shrink: 0;
+}
+.podium-view .institution-logo-bar img {
+  width: 67px;
+  height: 60px;
+  object-fit: contain;
+  flex-shrink: 0;
+  image-rendering: auto;
+}
+.podium-view .institution-logo-bar img:first-child { width: 68px; }
+.podium-view .gemass-wordmark {
+  height: 96px;
+  width: 296px;
+  display: grid;
+  place-items: center;
+  margin-top: -5px;
+  flex-shrink: 0;
+}
+.podium-view .gemass-wordmark img {
+  width: 274px;
+  height: 96px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 7px #f2a86038);
+}
+.podium-view .gemass-wordmark-text {
+  font-family: Georgia, serif;
+  font-weight: 800;
+  font-size: 56px;
+  color: #fff9eb;
+  text-shadow: 0 2px 8px #ffc89170;
+  line-height: 1;
+}
+.podium-view .gemass-wordmark-text small {
+  display: block;
+  font-family: system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: .3px;
+}
+.podium-view .event-header h1 {
+  margin: 5px 0 12px;
+  max-width: 1420px;
+  font-family: Arial, 'Poppins', system-ui, sans-serif;
+  font-size: 65px;
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: 1px;
+  color: #fff8ed;
+  text-transform: uppercase;
+  text-shadow: 0 2px 12px #eea56982, 0 2px 2px #bd715050;
+  overflow-wrap: anywhere;
+}
+.podium-view .final-ribbon {
+  width: 510px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(180deg,#ffe3a2 0%,#f3bf60 100%);
+  box-shadow: 0 5px 18px #43193e30;
+  border-radius: 7px;
+  color: #3b2363;
+}
+.podium-view .final-ribbon::before,
+.podium-view .final-ribbon::after {
+  content: '';
+  width: 57px;
+  height: 43px;
+  position: absolute;
+  top: 8px;
+  z-index: -1;
+  background: #e7ac56;
+  clip-path: polygon(0 0,100% 0,100% 100%,0 100%,25% 50%);
+}
+.podium-view .final-ribbon::before { left: -44px; }
+.podium-view .final-ribbon::after { right: -44px; transform: rotate(180deg); }
+.podium-view .final-ribbon > span {
+  font-size: 37px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+.podium-view .event-location {
+  margin: 13px 0 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 29px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  line-height: 1;
+  color: #f6c56f;
+  text-transform: uppercase;
+  text-shadow: 0 3px 7px #3d1a424d;
+}
+.podium-view .leaderboard {
+  min-height: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  z-index: 1;
+}
+.podium-view .podium-lineup {
+  width: 100%;
+  height: 471px;
+  padding: 0 15px 23px;
+  gap: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex: 0 0 auto;
+}
+.podium-view .podium-position,
+.podium-view .podium-position.place-1 {
+  width: 325px;
+  flex: 0 0 325px;
+  z-index: 1;
+  margin: 0;
+  position: relative;
+  display: block;
+}
+.podium-view .podium-position.place-1 {
+  width: 405px;
+  flex-basis: 405px;
+  z-index: 3;
+}
+.podium-view .podium-card {
+  height: 350px;
+  border: 4px solid #b7b5c0;
+  border-radius: 37px 37px 21px 21px;
+  background: #f6f4f8;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 16px 35px #18102f40, 0 1px 3px #fff8 inset;
+}
+.podium-view .place-1 .podium-card {
+  height: 423px;
+  border-color: #e6b747;
+  box-shadow: 0 18px 40px #1e153c57, 0 0 0 2px #f9da7b88;
+}
+.podium-view .place-3 .podium-card { border-color: #bf866c; }
+.podium-view .podium-card-heading {
+  height: 79px;
+  min-height: 79px;
+  flex-shrink: 0;
+  padding: 12px 15px 9px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg,#f1f1f3,#dedde1 51%,#fff);
+  color: #201039;
+  border-radius: 31px 31px 0 0;
+  position: relative;
+  z-index: 1;
+}
+.podium-view .place-1 .podium-card-heading {
+  height: 88px;
+  min-height: 88px;
+  background: linear-gradient(115deg,#ffeab1,#f9cf69 54%,#fff2c5);
+  border-radius: 31px 31px 0 0;
+}
+.podium-view .place-3 .podium-card-heading {
+  background: linear-gradient(115deg,#f9ddcc,#eebc9e 53%,#ffebde);
+}
+.podium-view .podium-card-heading h3 {
+  max-width: 100%;
+  margin: 0 0 5px;
+  font-family: Arial, 'Poppins', system-ui, sans-serif;
+  font-size: 28px;
+  font-weight: 850;
+  line-height: 1.05;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #24143b;
+}
+.podium-view .place-1 .podium-card-heading h3 { font-size: 34px; }
+.podium-view .podium-card-heading span {
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 3px;
+  color: #302144;
+  white-space: nowrap;
+}
+.podium-view .place-1 .podium-card-heading span { font-size: 13px; letter-spacing: 3.5px; }
+.podium-view .winner-crown {
+  position: absolute;
+  top: -78px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #f6c54f;
+  filter: drop-shadow(0 4px 4px #5f372d65);
+  z-index: 5;
+  line-height: 0;
+}
+.podium-view .winner-crown svg { stroke: #dc9c2d; }
+.podium-view .podium-photo {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg,#b2b3c0 0%,#756d90 60%,#423350 100%);
+}
+.podium-view .place-1 .podium-photo { background: linear-gradient(135deg,#e8c986,#9b809c 63%,#5c3b60); }
+.podium-view .place-3 .podium-photo { background: linear-gradient(135deg,#cb9a90,#80687d 65%,#543a51); }
+.podium-view .podium-photo.has-picture > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+.podium-view .podium-photo-placeholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: radial-gradient(ellipse at 50% 30%,color-mix(in srgb,var(--team-accent) 45%,#fff4de),transparent 75%);
+  color: #ffffffb5;
+}
+.podium-view .podium-photo-placeholder span {
+  font-size: 26px;
+  font-weight: 850;
+  letter-spacing: 5px;
+}
+.podium-view .podium-photo-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,transparent 25%,#211b2c13 49%,#15111ee5 100%);
+  pointer-events: none;
+}
+.podium-view .podium-score {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-variant-numeric: tabular-nums;
+  font-size: 68px;
+  font-weight: 900;
+  line-height: .94;
+  letter-spacing: -1px;
+  color: #fff;
+  text-shadow: 0 3px 7px #160f2857;
+}
+.podium-view .place-1 .podium-score { font-size: 86px; bottom: 22px; }
+.podium-view .podium-score.small-number { font-size: 48px; }
+.podium-view .place-1 .podium-score.small-number { font-size: 61px; }
+.podium-view .podium-score .points-label {
+  color: #fff9f7;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.7;
+  margin-top: 3px;
+  letter-spacing: 5px;
+  text-shadow: 0 2px 4px #191020;
+}
+.podium-view .podium-medal-bar {
+  height: 65px;
+  min-height: 65px;
+  flex-shrink: 0;
+  border-radius: 0 0 16px 16px;
+  background: linear-gradient(120deg,#e5e4e8,#c8c8d0 52%,#f8f8fa);
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.podium-view .place-1 .podium-medal-bar { background: linear-gradient(110deg,#ffedbe,#f6cc67 54%,#fff0bf); }
+.podium-view .place-3 .podium-medal-bar { background: linear-gradient(110deg,#f5d0bb,#dca47f 54%,#ffe2cf); }
+.podium-view .podium-medal {
+  position: absolute;
+  top: -19px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(140deg,#fcfcff,#aeb1bc 55%,#f7f8fc);
+  border: 3px solid #e6e7e9;
+  outline: 2px solid #a5a6ae;
+  box-shadow: 0 5px 12px #1c12354a;
+  display: grid;
+  place-items: center;
+  color: #4c4b54;
+}
+.podium-view .place-1 .podium-medal { width: 99px; height: 99px; background: linear-gradient(135deg,#ffe9a0,#e9ad30 58%,#fff3c9); border-color: #fff0c2; outline-color: #c28a1f; color: #7e500d; }
+.podium-view .place-3 .podium-medal { background: linear-gradient(135deg,#ffe0c4,#c57f5a 58%,#ffdfc5); border-color: #f9d4b9; outline-color: #a76b4a; color: #794b2d; }
+.podium-view .podium-medal svg { position: absolute; opacity: .3; }
+.podium-view .podium-medal strong { position: relative; font-size: 44px; font-weight: 900; line-height: 1; }
+.podium-view .laurel-left, .podium-view .laurel-right {
+  position: absolute;
+  top: 22px;
+  font-size: 34px;
+  line-height: .7;
+  color: #a4a6b0;
+  opacity: .8;
+}
+.podium-view .laurel-left { left: calc(50% - 87px); transform: rotate(-30deg); }
+.podium-view .laurel-right { right: calc(50% - 87px); transform: scaleX(-1) rotate(-30deg); }
+.podium-view .place-1 .laurel-left,.podium-view .place-1 .laurel-right { color: #b77b20; }
+.podium-view .place-3 .laurel-left,.podium-view .place-3 .laurel-right { color: #a16b51; }
+.podium-view .podium-lineup.two-teams { gap: 36px; }
+.podium-view .other-teams {
+  margin: 4px auto 0;
+  max-width: 1120px;
+  width: 100%;
+  gap: 8px;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+}
+.podium-view .other-team {
+  height: 51px;
+  border-radius: 13px;
+  border: 1px solid #ffffff3c;
+  background: #241e5ea8;
+  color: #fff7e9;
+  backdrop-filter: blur(7px);
+  padding: 7px 13px;
+  gap: 9px;
+}
+.podium-view .other-rank { color: #f8d4a7; }
+.podium-view .other-team h3 { color: #fffaf2; }
+.podium-view .other-score { color: #fff; }
+.podium-view .other-score > span:last-child { color: #fff9; }
+.podium-view .stage-footer {
+  color: #ffedd1;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  margin-top: auto;
+  opacity: .85;
+}
+.podium-view .stage-footer i { background: #f3c574; }
+.podium-view .footer-line { background: #ffdfa350; }
+.podium-view .display-toolbar {
+  background: #fffaf0ef;
+  color: #332647;
+}
+.podium-view.has-extra-teams .event-header {
+  height: 328px;
+  flex-basis: 328px;
+}
+.podium-view.has-extra-teams .institution-logo-bar { height: 68px; }
+.podium-view.has-extra-teams .gemass-wordmark { height: 88px; }
+.podium-view.has-extra-teams .gemass-wordmark img { height: 88px; }
+.podium-view.has-extra-teams .event-header h1 { font-size: 59px; margin-bottom: 8px; }
+.podium-view.has-extra-teams .final-ribbon { height: 48px; }
+.podium-view.has-extra-teams .final-ribbon > span { font-size: 32px; }
+.podium-view.has-extra-teams .event-location { font-size: 25px; margin-top: 10px; }
+.podium-view.has-extra-teams .podium-lineup { height: 388px; padding-bottom: 17px; }
+.podium-view.has-extra-teams .podium-card { height: 307px; }
+.podium-view.has-extra-teams .place-1 .podium-card { height: 362px; }
+.podium-view.has-extra-teams .podium-card-heading { min-height: 66px; height: 66px; }
+.podium-view.has-extra-teams .place-1 .podium-card-heading { min-height: 76px; height: 76px; }
+.podium-view.has-extra-teams .podium-medal-bar { min-height: 52px; height: 52px; }
+.podium-view.has-extra-teams .winner-crown { top: -75px; }
+.podium-view.has-extra-teams .other-teams { margin-top: 5px; }
+.podium-view.has-extra-teams .stage-footer { height: 20px; margin-top: auto; }
+@media (prefers-reduced-motion: reduce) {
+  .podium-view .podium-position { transition: none !important; }
+}
+
+/* Final polish: keep the crown between the subtitle and the team name. */
+.podium-view .winner-crown { top: -28px; }
+.podium-view .winner-crown svg { width: 56px; height: 56px; }
+.podium-view.has-extra-teams .winner-crown { top: -28px; }
+.podium-view .final-ribbon > span,
+.podium-view .podium-card-heading span,
+.podium-view .podium-medal strong,
+.podium-view .stage-footer { font-family: Arial, 'Poppins', system-ui, sans-serif; }
+.podium-view .podium-photo-placeholder { justify-content: flex-start; padding-top: 20px; gap: 2px; }
+.podium-view .podium-photo-placeholder svg { width: 66px; height: 66px; }
+.podium-view .podium-photo-placeholder span { font-size: 20px; letter-spacing: 3px; }
+
+/* Background presets keep working without replacing the GEMASS night artwork. */
+.podium-view .cosmic-scene[data-variant="sky"] { filter: hue-rotate(18deg) saturate(.86); }
+.podium-view .cosmic-scene[data-variant="lavender"] { filter: hue-rotate(-10deg) saturate(.94); }
+.podium-view .cosmic-scene[data-variant="sunset"] { filter: hue-rotate(-22deg) saturate(1.12); }
+.podium-view .other-teams:has(> :only-child) { max-width: 440px; grid-template-columns: 1fr; }
+/* Extra teams need a little more air between the event subtitle and crown. */
+.podium-view.has-extra-teams .podium-lineup { height: 404px; }

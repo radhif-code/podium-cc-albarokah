@@ -17,13 +17,13 @@ export function createDefaultState(): SharedState {
 const record = (x: unknown): x is Record<string, unknown> => !!x && typeof x === "object" && !Array.isArray(x);
 const text = (x: unknown, fallback: string, max = 100) => typeof x === "string" ? x.slice(0, max) : fallback;
 const color = (x: unknown, fallback: string) => typeof x === "string" && /^#[a-f\d]{6}$/i.test(x) ? x : fallback;
-const score = (x: unknown) => typeof x === "number" && Number.isFinite(x) ? Math.max(0, Math.min(SCORE_LIMIT, Math.round(x))) : 0;
+const score = (x: unknown) => typeof x === "number" && Number.isFinite(x) ? Math.max(-SCORE_LIMIT, Math.min(SCORE_LIMIT, Math.round(x))) : 0;
 const BUNDLED_LOGOS = new Set(DEFAULT_SETTINGS.eventLogos.map(item => item.src));
 function logo(x: unknown): string | null {
   if (typeof x === "string" && BUNDLED_LOGOS.has(x)) return x;
   return typeof x === "string" && x.length <= 400000 && /^(data:image\/(png|jpeg|webp);base64,|https:\/\/)/.test(x) ? x : null;
 }
-const slots = (x: unknown, fallback: number[]) => Array.isArray(x) ? Array.from({length: 4}, (_, i) => score(x[i])) : [...fallback];
+const slots = (x: unknown, fallback: number[]) => Array.isArray(x) ? Array.from({length: 4}, (_, i) => Math.max(0, score(x[i]))) : [...fallback];
 export function decodeState(raw: string): SharedState | null {
   try {
     const data: unknown = JSON.parse(raw);
@@ -33,7 +33,7 @@ export function decodeState(raw: string): SharedState | null {
     out.settings = {
       eventLogoRevision: DEFAULT_SETTINGS.eventLogoRevision,
       competitionName: text(settings['competitionName'], DEFAULT_SETTINGS.competitionName, 70),
-      location: text(settings['location'], DEFAULT_SETTINGS.location, 70),
+      location: settings['location'] === "DESA SRUNI" ? DEFAULT_SETTINGS.location : text(settings['location'], DEFAULT_SETTINGS.location, 70),
       badgeText: text(settings['badgeText'], DEFAULT_SETTINGS.badgeText, 90),
       themeColor: color(settings['themeColor'], DEFAULT_SETTINGS.themeColor),
       background: ["peach", "sky", "lavender", "sunset"].includes(String(settings['background'])) ? settings['background'] as Settings['background'] : DEFAULT_SETTINGS.background,

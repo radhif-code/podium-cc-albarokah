@@ -1,6 +1,6 @@
 # GEMASS — Podium Cerdas Cermat
 
-Versi revisi proyek Podium Pulse Showdown untuk lomba cerdas cermat Desa Sruni.
+Versi GEMASS Grand Final untuk lomba cerdas cermat Sruni Al Barokah. Desain podium mengikuti referensi bulan sabit, langit ungu, dan podium emas–perak–perunggu. Panel operator tetap menggunakan tampilan aslinya.
 
 ## Cara memakai saat acara
 
@@ -15,9 +15,9 @@ Versi revisi proyek Podium Pulse Showdown untuk lomba cerdas cermat Desa Sruni.
 
 ## Logo asli acara
 
-Tiga logo asli yang diberikan sudah disertakan dan langsung tampil di bagian atas podium, dengan urutan **LDII — GEMASS — PPG**. Logo GEMASS di tengah memakai area lebih lebar agar proporsinya tetap utuh. Tidak ada slot logo keempat.
+Layar podium menampilkan **tiga lambang penyelenggara** dalam satu baris (lembaga, LDII, PPG), diikuti tulisan GEMASS. Aset transparan tulisan GEMASS dan lambang lembaga diekstrak dari file referensi pengguna. Logo tetap dimuat terpisah, bukan menggunakan gambar papan skor statis. Tiga pengaturan logo operator tetap tersedia dengan label dan ID lama agar data lama serta unggahan kustom tidak rusak.
 
-File bawaan berada di `public/logos/ldii.png`, `public/logos/logo-gemass.png`, dan `public/logos/logo-ppg.png`. Kamu tetap dapat mengganti atau menghapus logo lewat **Panel operator → Pengaturan → Logo di atas podium**.
+File bawaan berada di `public/logos/ldii.png`, `public/logos/logo-gemass.png`, `public/logos/logo-ppg.png`, `public/logos/logo-sekolah.png`, dan `public/logos/logo-gemass-transparent.png`. Logo GEMASS versi transparan dipakai pada podium bila pengaturan masih memakai logo default, tetapi logo yang diganti pengguna tetap digunakan. Kamu tetap dapat mengganti atau menghapus logo lewat **Panel operator → Pengaturan → Logo di atas podium**.
 
 Pilih PNG, JPG, atau WebP maksimal 10 MB untuk penggantian. PNG transparan disarankan. Unggahan otomatis diperkecil hingga sisi terpanjang 320 piksel. Logo tim diunggah terpisah pada bagian Tim.
 
@@ -28,7 +28,7 @@ Setelah upgrade dari versi sebelumnya, ketiga logo dipasang otomatis saat halama
 - Mendukung 2–8 tim agar seluruh podium tetap muat di layar.
 - Tambah/kurangi poin dengan tombol yang nilainya bisa diubah di Pengaturan.
 - Input skor manual, ubah nama/warna/logo tim, serta atur skor maksimum.
-- Skor tidak negatif. Batas teknis angka adalah 999999.
+- Skor boleh **negatif** (misalnya 0 − 25 = −25), termasuk input manual, skor awal, undo, cadangan, dan hasil refresh. Batas teknis nilai adalah −999999 sampai 999999; batas skor maksimum yang diatur tetap berlaku.
 - **Reset Skor** mengembalikan skor tim ke nilai **Skor awal** yang diatur. Mengubah Skor awal saja tidak mengubah skor pertandingan yang sedang berjalan.
 - **Urungkan terakhir** membatalkan satu perubahan skor. Maksimal 30 perubahan terakhir tersimpan. Perubahan batas skor menghapus riwayat agar pembatalan tidak melampaui batas baru.
 - Saat skor sama, posisi mengikuti urutan pendaftaran tim. Penentuan juara dengan skor seri mengikuti aturan panitia.
@@ -58,9 +58,9 @@ npm run preview
 
 Setelah dependensi terpasang, aplikasi tidak membutuhkan server database, API key, atau koneksi internet selama kedua jendela mengakses server lokal yang sama.
 
-## Update repository yang sudah ada
+## Update repository yang sudah ada (VS Code + GitHub + Vercel)
 
-Lihat **[UPDATE-REPOSITORY.md](UPDATE-REPOSITORY.md)** untuk langkah mengganti proyek lama dengan versi ini melalui GitHub Desktop atau GitHub web.
+Gunakan panduan **[UPDATE-VSCODE-GITHUB-VERCEL.md](UPDATE-VSCODE-GITHUB-VERCEL.md)**. Jangan membuat repository atau project Vercel baru. File di ZIP disalin ke *root* folder hasil clone repository yang lama, **tanpa menghapus folder `.git`**, kemudian commit dan push branch production yang sudah terhubung ke Vercel. Periksa data skor dengan fitur Cadangan sebelum upgrade.
 
 ## Deploy ke Vercel
 

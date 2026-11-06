@@ -98,7 +98,7 @@ function OperatorCard({
               if (e.key === "Escape") setManualOpen(false);
             }}
             aria-label={`Skor manual ${team.name}`}
-            min={0}
+            min={-999999}
             max={999999}
             placeholder={`Skor ${team.name}`}
             className="min-w-0 flex-1 rounded-xl border border-border bg-input px-3 py-2 text-sm font-semibold outline-none focus:ring-2 focus:ring-ring"

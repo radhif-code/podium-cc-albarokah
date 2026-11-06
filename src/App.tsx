@@ -36,9 +36,9 @@ function PodiumView({ sb }: {sb: Scoreboard}) {
       if (document.fullscreenElement) await document.exitFullscreen(); else await document.documentElement.requestFullscreen();
     } catch {setNotice("Fullscreen belum diizinkan. Gunakan F11 pada browser desktop.");}
   };
-  const scale = Math.min(size.width / 1280, size.height / 900);
-  return <main className={`podium-view ${controls ? "show-controls" : ""}`} onPointerMove={reveal} onPointerDown={reveal}>
-    <Background variant={sb.settings.background}/>
+  const scale = Math.min(size.width / 1600, size.height / 900);
+  return <main className={`podium-view ${controls ? "show-controls" : ""} ${sb.teams.length > 3 ? "has-extra-teams" : ""}`} onPointerMove={reveal} onPointerDown={reveal}>
+    <div className="cosmic-scene" data-variant={sb.settings.background} aria-hidden="true"/>
     <div className="stage-canvas" style={{transform: `translate(-50%, -50%) scale(${scale})`}}>
       <EventHeader settings={sb.settings}/>
       <Leaderboard teams={sb.teams} settings={sb.settings} deltas={sb.deltas}/>

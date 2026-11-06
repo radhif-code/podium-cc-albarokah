@@ -358,14 +358,14 @@ export default function SettingsPanel({
                         <span className="text-xs font-bold text-muted-foreground">Skor awal</span>
                         <input
                           type="number"
-                          min={0}
+                          min={-999999}
                           className={`${inputCls} w-20 text-center`}
                           value={team.initialScore}
                           max={999999}
                           aria-label={`Skor awal ${team.name}`}
                           onChange={(e) => {
                             const v = Number.parseInt(e.target.value, 10);
-                            const initial = Number.isNaN(v) ? 0 : Math.max(0, v);
+                            const initial = Number.isNaN(v) ? 0 : Math.max(-999999, Math.min(999999, v));
                             updateTeam(team.id, { initialScore: initial });
                           }}
                         />
